@@ -61,24 +61,6 @@ function App() {
     );
   }
 
-  function calculateScore() {
-    let score = 0;
-    quizData.forEach((question) => {
-      if (
-        question.allAnswers[parseInt(question.selectedAnswerIndex)] ==
-        question.correctAnswer
-      ) {
-        score++;
-      }
-    });
-    return score;
-  }
-
-  function onCheckAnswers() {
-    setShowAnswer(true);
-    const score = calculateScore();
-    console.log(`Score: ${score}/${quizData.length}`);
-  }
   return (
     <>
       {quizData.length == 0 && <Start onStartQuiz={handleStartQuiz} />}
@@ -100,11 +82,10 @@ function App() {
         <Questions
           quizData={quizData}
           addSelectedAnswers={addSelectedAnswers}
+          handleStartQuiz={handleStartQuiz}
         />
       )}
-      <button className="header-btn" onClick={onCheckAnswers}>
-        Check Answers
-      </button>
+      
     </>
   );
 }
