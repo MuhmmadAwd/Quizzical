@@ -1,7 +1,19 @@
-:root {}
+:root {
+  --white: #fff;
+  --blue-700: #D6DBF5;
+  --blue-500: #4D5B9E;
+  --blue-100: #293264;
+  --green-700: #94D7A2;
+  --red-700: #F8BCBC;
+}
 
-* {}
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Karla', sans-serif;
+  margin: 0;
+  background-color: #f1f0f0;
+  color: var(--blue-100);
 }
